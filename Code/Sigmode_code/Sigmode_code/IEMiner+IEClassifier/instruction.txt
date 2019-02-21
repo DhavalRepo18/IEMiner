@@ -1,0 +1,45 @@
+IEClassifier
+
+		Software Used: IEClassifier desinged
+
+		IEClassifier <<Result from class 1>>  <<Result from class 2>> <<Input data file for class 1>> <<Input data file for class 2>> << Test file for class 1 >> << Test file for class 2 >>
+
+		Example:
+		IEClassifier result_db0.data result_dc0.data part_db0.data part_dc0.data pattern_0.data pat0.data path0.data
+	
+		Where
+		result_db0.data - {Result from class 1, first use IEMiner provided in this directory}
+ 		result_dc0.data - {Result from class 2, first use IEMiner provided in this directory}
+		part_db0.data   - {Input data file for class 1}
+		part_dc0.data   - {Input data file for class 2}
+		pat0.data  	- {test file for class 1}
+		path0.data  	- {test file for class 2}
+		
+		
+		Hence code will be:
+		IEMiner part_db0.data 0.10 result_db0.data
+		IEMiner part_dc0.data 0.10 result_dc0.data
+		IEClassifier result_db0.data result_dc0.data part_db0.data part_dc0.data pattern_0.data pat0.data path0.data
+
+      For each Test file, Output is
+      
+      No. of Class 1 for testing:P1
+      	Correctly classified instance by BestConf strategy: A1
+      	Correctly classified instance by Malority_Class strategy: B1
+      No. of class 2 for testing:Q1	
+       Correctly classified instance by BestConf strategy: C1
+       Correctly classified instance by Malority_Class strategy: D1
+            
+      Hence, classification accuracy for this  test file is:
+       
+			 Classification accuracy for BestConf strategy :  (A1+C1)/(P1+Q1)
+			 Classification accuracy for Majority_Class  :  (B1+D1)/(P1+Q1)		  				
+
+(*) In our current implementation, we have combined implementation of BestConf strategy and Majority_Class strategy also has the fixed parameter
+for information gain. Currently it only support for classification of two class only. As well as user has to partition the 
+data for implementing the 10-fold cross validation.  
+			  
+		
+		
+		
+		

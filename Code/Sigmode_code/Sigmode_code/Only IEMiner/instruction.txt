@@ -1,0 +1,38 @@
+Instruction: README
+
+(1) IEMiner 	: C# Prog. Language	:	IEMiner.exe
+
+How to run:
+
+(1) IEMiner program:
+    Command: IEMiner inputdatafile support outputresultfile
+    [Example: IEMiner hep_data 0.15 IEMiner_res_15.data]
+    
+    * Format of inputdatafile: Each line represent one event sequence (i.e., one transaction). Event sequence must be ordered wrt time.
+    
+    eventtype starttime endtime eventtype starttime endtime
+    eventtype starttime endtime eventtype starttime endtime eventtype starttime endtime eventtype starttime endtime
+    eventtype starttime endtime
+    ...
+    
+    [Example of input file]:     
+    A 1 3 B 2 4 A 8 9 D 10 12
+    A 3 5 
+    B 2 5 C 3 4
+    ...
+    
+    * Format of Outputresultfile :
+    
+    frequent pattern1: support value1
+    frequent Pattern2: support value2
+    frequent Pattern3: support value3
+    ...
+    
+    [Example of result file]: 
+    
+    A:0.50
+    B(A,0,0,0,0,0,B):0.40   
+    ...    
+    
+After runing the IEMiner program, it displays the total time required. 
+        
